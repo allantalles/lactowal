@@ -1,11 +1,11 @@
-import um from "../../public/images/1.png";
-import dois from "../../public/images/2.png";
-import tres from "../../public/images/3.png";
-import quatro from "../../public/images/4.png";
-import cinco from "../../public/images/5.png";
-import seis from "../../public/images/6.png";
-import sete from "../../public/images/7.png";
-import oito from "../../public/images/8.png";
+import um from "../../public/images/1.jpg";
+import dois from "../../public/images/2.jpg";
+import tres from "../../public/images/3.jpg";
+import quatro from "../../public/images/4.jpg";
+import cinco from "../../public/images/5.jpg";
+import seis from "../../public/images/6.jpg";
+import sete from "../../public/images/7.jpg";
+import oito from "../../public/images/8.jpg";
 
 export const cards = [
   {
