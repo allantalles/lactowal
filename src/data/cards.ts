@@ -1,11 +1,11 @@
-const um = "/public/images/1.jpg";
-const dois = "/public/images/2.jpg";
-const tres = "/public/images/3.jpg";
-const quatro = "/public/images/4.jpg";
-const cinco = "/public/images5.jpg";
-const seis = "/public/images/6.jpg";
-const sete = "/public/images/7.jpg";
-const oito = "/public/images/8.jpg";
+const um = "../../public/images/1.jpg";
+const dois = "../../public/images/2.jpg";
+const tres = "../../public/images/3.jpg";
+const quatro = "../../public/images/4.jpg";
+const cinco = "../../public/images/5.jpg";
+const seis = "../../public/images/6.jpg";
+const sete = "../../public/images/7.jpg";
+const oito = "../../public/images/8.jpg";
 
 export const cards = [
   {
