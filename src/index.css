@@ -1,0 +1,22 @@
+:root {
+  --color-primary: #13141f;
+  --color-secondary: crimson;
+  --color-text-light: #ffffff;
+  --color-text-dark: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: Poppins;
+  background-color: #ed1c24;
+}

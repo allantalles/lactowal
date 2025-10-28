@@ -1,0 +1,92 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+}
+
+.text {
+  padding: 2rem 0;
+  color: white;
+  text-align: center;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.modal table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.modal th,
+.modal td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.leaderboard-row {
+  transition: background-color 0.3s ease;
+}
+
+.leaderboard-row:hover {
+  background-color: #f1f1f1;
+}
+
+.rank-1 td {
+  font-weight: bold;
+  color: gold;
+  animation: pulse 1s infinite;
+}
+
+.rank-2 td {
+  font-weight: bold;
+  color: silver;
+}
+
+.rank-3 td {
+  font-weight: bold;
+  color: #cd7f32;
+}
+
+.current-player {
+  background-color: #d9f9d9 !important;
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 5px gold;
+  }
+  50% {
+    text-shadow: 0 0 15px gold;
+  }
+  100% {
+    text-shadow: 0 0 5px gold;
+  }
+}
