@@ -1,5 +1,5 @@
 import "./styles.css";
-import logo from "../../../public/images/cartao_eletropassos.jpg";
+import logo from "/../../public/images/cartao_eletropassos.jpg";
 
 export interface CardProps {
   id: string;
