@@ -1,11 +1,11 @@
-import um from "../../public/images/1.jpg";
-import dois from "../../public/images/2.jpg";
-import tres from "../../public/images/3.jpg";
-import quatro from "../../public/images/4.jpg";
-import cinco from "../../public/images/5.jpg";
-import seis from "../../public/images/6.jpg";
-import sete from "../../public/images/7.jpg";
-import oito from "../../public/images/8.jpg";
+const um = "/images/1.jpg";
+const dois = "/images/2.jpg";
+const tres = "/images/3.jpg";
+const quatro = "/images/4.jpg";
+const cinco = "/images/5.jpg";
+const seis = "/images/6.jpg";
+const sete = "/images/7.jpg";
+const oito = "/images/8.jpg";
 
 export const cards = [
   {
