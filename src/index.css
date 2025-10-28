@@ -1,6 +1,6 @@
 :root {
   --color-primary: #13141f;
-  --color-secondary: yellow;
+  --color-secondary: crimson;
   --color-text-light: #ffffff;
   --color-text-dark: #000000;
 }
@@ -18,5 +18,5 @@ html {
 body {
   font-size: 1.6rem;
   font-family: Poppins;
-  background-color: #ed1c24;
+  background-color: #f2b33d;
 }
