@@ -1,31 +1,30 @@
 import "./styles.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid"; // Instale com: npm install uuid
+import { v4 as uuidv4 } from "uuid";
 
 export function Form() {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [celular, setCelular] = useState("");
+  const [tipoPessoa, setTipoPessoa] = useState(""); // 👈 Novo campo
+
   const navigate = useNavigate();
 
-  // Protege saída da página se houver dados incompletos
   useEffect(() => {
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      if (nome || email || celular) {
+      if (nome || email || celular || tipoPessoa) {
         e.preventDefault();
-        e.returnValue = ""; // necessário para exibir o alerta
+        e.returnValue = "";
       }
     };
-
     window.addEventListener("beforeunload", handleBeforeUnload);
     return () => window.removeEventListener("beforeunload", handleBeforeUnload);
-  }, [nome, email, celular]);
+  }, [nome, email, celular, tipoPessoa]);
 
   const handleCelularChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value.replace(/\D/g, "");
     if (value.length > 11) value = value.slice(0, 11);
-
     if (value.length > 10) {
       value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
     } else if (value.length > 6) {
@@ -35,33 +34,31 @@ export function Form() {
     } else {
       value = value.replace(/^(\d*)$/, "($1");
     }
-
     setCelular(value);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    const id = uuidv4(); // gera ID único
+    const id = uuidv4();
     const newEntry = {
       id,
       nome,
       email,
       celular,
-      tempo: null, // será preenchido após o jogo
+      tipoPessoa, // 👈 Incluído
+      tempo: null,
     };
-
     const existing = localStorage.getItem("formData");
     const data = existing ? JSON.parse(existing) : [];
-
     data.push(newEntry);
     localStorage.setItem("formData", JSON.stringify(data));
-    localStorage.setItem("jogadorAtual", id); // marca jogador atual
-
+    localStorage.setItem("jogadorAtual", id);
+    
     setNome("");
     setEmail("");
     setCelular("");
-
+    setTipoPessoa(""); // 👈 Reset
+    
     navigate("/game");
   };
 
@@ -80,6 +77,7 @@ export function Form() {
           required
         />
       </div>
+
       <div>
         <label htmlFor="email" className="label">
           Email
@@ -93,6 +91,7 @@ export function Form() {
           required
         />
       </div>
+
       <div>
         <label htmlFor="celular" className="label">
           Celular
@@ -107,6 +106,36 @@ export function Form() {
           required
         />
       </div>
+
+      {/* 👇 NOVO CAMPO - Radio Buttons */}
+      <div>
+        <label className="label">Tipo de Pessoa</label>
+        <div style={{ display: "flex", gap: "20px", marginTop: "8px" }}>
+          <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer" }}>
+            <input
+              type="radio"
+              name="tipoPessoa"
+              value="fisica"
+              checked={tipoPessoa === "fisica"}
+              onChange={(e) => setTipoPessoa(e.target.value)}
+              required
+            />
+            Pessoa Física
+          </label>
+          <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer" }}>
+            <input
+              type="radio"
+              name="tipoPessoa"
+              value="juridica"
+              checked={tipoPessoa === "juridica"}
+              onChange={(e) => setTipoPessoa(e.target.value)}
+              required
+            />
+            Pessoa Jurídica
+          </label>
+        </div>
+      </div>
+
       <button type="submit" className="botao">
         Vamos começar!
       </button>
