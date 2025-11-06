@@ -39,3 +39,39 @@
   border: #fff 2px solid;
   color: white;
 }
+
+/* Adicione essa classe para o campo de radio */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.radio-option:hover {
+  border-color: #4CAF50;
+  background: #f9f9f9;
+}
+
+.radio-option input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.radio-option.selected {
+  border-color: #4CAF50;
+  background: #e8f5e9;
+}
